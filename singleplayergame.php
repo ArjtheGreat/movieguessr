@@ -12,7 +12,7 @@ session_start();
     <a href="logout.php">Logout</a>
     <h1>Welcome to the Game</h1>
     <br>
-    <button a href="singleplayergame.php"> Start </button> 
+    <button> Start </button> 
     
 </body>
 </html>
