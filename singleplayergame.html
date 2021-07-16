@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MovieGuessr</title>
+</head>
+<body>
+    <a href="index.php">Home</a> 
+    <a href="logout.php">Logout</a>
+    <h1>Guess Which Country!</h1>
+    <br>
+    <img src = "movies/USA_AvengersEndgame.png"> </img>
+    <br>
+    <br>
+    <form class = "white addpadding">
+        <div class="form-group"> 
+            <ol>
+                <li>
+                <input type="radio" name="choice" value="1" />Rasmus Lerdorf
+                </li>
+                <li>
+                <input type="radio" name="choice" value="2" />Larry Wall
+                </li>
+                <li>
+                <input type="radio" name="choice" value="3" />Zeev Suraski
+                </li>
+            </ol>
+        </div>
+        <div class="form-group"> 
+            <input type="submit" class="btn btn-primary" onclick = "submitAnswer()" name = "Submit"/>
+        </div>
+    </form>
+</body>
+</html>
+
