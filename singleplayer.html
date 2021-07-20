@@ -1,7 +1,4 @@
-<?php
-session_start();
-    $_SESSION;
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +9,10 @@ session_start();
     <a href="logout.php">Logout</a>
     <h1>Welcome to the Game</h1>
     <br>
-    <a href="singleplayergame.html" class = "button"> Start  </a>
+    <a href="singleplayergame.php" class = "button" onclick = "setScoreVariable()"> Start  </a>
     
+    <script>
+       var score = 0;
+    </script>
 </body>
 </html>
