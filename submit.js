@@ -1,19 +1,19 @@
 var submitAnswer = function() {
-  <script type="text/javascript" src="alert.php"></script>
   var radios = document.getElementsByName('choice');
-  var val= "";
+  var value= "";
   for (var i = 0, length = radios.length; i < length; i++) {
       if (radios[i].checked) {
-         val = radios[i].value; 
+         value = radios[i].value; 
          break;
        }
   }
   
-  if (val == "" ) {
-    alert('please select choice answer');
-  } else if ( val == "1" ) {
+  if (value == "" ) {
+    alert('please select answer');
+  } else if ( value == "1" ) {
     alert('Answer is correct !');
-    print("joe");
+    let scoreTextElement = document.getElementById("score-text");
+    scoreTextElement.innerHTML = scoreTextElement.innerHTML+1000; 
   } else {
     alert('Answer is wrong');
   }
