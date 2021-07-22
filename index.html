@@ -1,19 +1,23 @@
-<script>
-    var score;
+<!-- <script>
+    let imageout = "";
+    result = randomProperty(USA_moviedict);
+    imageout = giveValue(result);
 
-    function setScoreVariable() {
-            score = 0;
-        }
-</script>
+</script>  -->
+
+
 <!DOCTYPE html>
 <html>
 <head>
+    <script src = "js/moviedict.js" defer></script> 
+    <script src = "js/htmlelements.js" defer></script> 
     <title>MovieGuessr</title>
 </head>
 <body>
     <a href="index.html">Home</a> 
     <h1>Welcome to the Game</h1>
     <br>
-    <a href="singleplayergame.html" class = "button" onclick = "setScoreVariable()"> Start  </a>
+    <a href="singleplayergame.html" id = "startgamebutton" class = "button" onclick = "updateImage()"> Start  </a>
+    
 </body>
 </html>
