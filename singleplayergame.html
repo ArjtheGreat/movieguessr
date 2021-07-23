@@ -1,15 +1,20 @@
-<script src = "submit.js"></script>
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>MovieGuessr</title>
+    <script src = "js/submit.js"></script>
+<script src = "js/values.js" defer></script>
+<script src = "js/htmlelements.js" defer></script>
+
+<script language="JavaScript" type="text/javascript" src="js/moviedict.js"></script>
+
 </head>
 <body>
     <a href="index.html">Home</a> 
     <h1>Guess Which Country!</h1>
     <br>
-    <img src = "movies/USA_AvengersEndgame.png"> </img>
+    <img id = "moviepic" > </img>
     <br>
     <br>
     <form class = "white addpadding" id="d1">
@@ -41,7 +46,9 @@
 </html>
 
 <script> 
-    let scoreTextElement = document.getElementById("score-text");
-    scoreTextElement.innerHTML = 0; 
+   
+    
+
 </script>
+
 
