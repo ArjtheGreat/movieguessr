@@ -24,12 +24,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Ball Game</h1>
+    <h1>MovieGuessr</h1>
     <button id = 'btnCreate'>New Game</button>
     <button id = 'btnJoin'>Join Game</button>
     <input type = 'text' id = 'txtGameId'>
     <div id  = 'divPlayers'></div>
-    <div id  = 'divBoard'></div>
+    
 
     <script>
         //HTML elements
@@ -42,7 +42,7 @@
         const btnJoin = document.getElementById("btnJoin");
         const txtGameId = document.getElementById("txtGameId");
         const divPlayers = document.getElementById("divPlayers");
-        const divBoard = document.getElementById("divBoard");
+       
 
     
         //wiring events
@@ -122,29 +122,6 @@
 
                 while(divBoard.firstChild)
                 divBoard.removeChild (divBoard.firstChild)
-
-                for (let i = 0; i < game.balls; i++){
-
-                    const b = document.createElement("button");
-                    b.id = "ball" + (i +1);
-                    b.tag = i+1
-                    b.textContent = i+1
-                    b.style.width = "150px"
-                    b.style.height = "150px"
-                    b.addEventListener("click", e => {
-                        b.style.background = playerColor
-                        const payLoad = {
-                            "method": "play",
-                            "clientId": clientId,
-                            "gameId": gameId,
-                            "ballId": b.tag,
-                            "color": playerColor
-                        }
-                        ws.send(JSON.stringify(payLoad))
-                    })
-                    divBoard.appendChild(b);
-                }
-
 
 
 
