@@ -1,4 +1,5 @@
 var submitAnswer = function() {
+  console.log("hi");
   var radios = document.getElementsByName('choice');
   var value= "";
   for (var i = 0, length = radios.length; i < length; i++) {
@@ -21,6 +22,7 @@ var submitAnswer = function() {
   } 
   result = movie[Math.floor(Math.random()*movie.length)];;
 imageout = result.pic;
+movie.splice(movie.indexOf(result));
 updateImage();
 }; 
 

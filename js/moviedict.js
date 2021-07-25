@@ -16,6 +16,7 @@ var AvengersEndgame = {
 }
 
 var PulpFiction = {
+    name: "Pulp Fiction",
     pic: "movies/USA_PulpFiction.png",
     country: "US"
 }

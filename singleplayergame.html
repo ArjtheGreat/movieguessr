@@ -7,6 +7,7 @@
 <script src = "js/values.js" defer></script>
 <script src = "js/htmlelements.js" defer></script>
 
+
 <script language="JavaScript" type="text/javascript" src="js/moviedict.js"></script>
 
 </head>
@@ -17,22 +18,14 @@
     <img id = "moviepic" > </img>
     <br>
     <br>
-    <form class = "white addpadding" id="d1">
+    
+    <form class = "white addpadding">
         <div class="form-group" > 
-            <ol>
-                <li>
-                <input type="radio" name="choice" value="1" />United States
-                </li>
-                <li>
-                <input type="radio" name="choice" value="2" />Canada
-                </li>
-                <li>
-                <input type="radio" name="choice" value="3" />China
-                </li>
-            </ol>
+            <ul id="d1">
+            </ul>
         </div>
         <div class="form-group"> 
-        <input type="submit" value="Submit" name="submit" class="btn btn-primary" onclick="submitAnswer()"/>
+        <input type="button" value="Submit" name="submit" id="submit" class="btn btn-primary" onclick="submitAnswer()"/>
 
         </div>
         <h1 id = "scoreprinter">
@@ -41,14 +34,10 @@
             </h1>
             
     </form>
-    
+    <script src = "js/createradios.js">
+    </script>
+  
 </body>
 </html>
-
-<script> 
-   
-    
-
-</script>
 
 
