@@ -19,8 +19,8 @@ var submitAnswer = function() {
   } else {
     alert('Answer is wrong');
   } 
-  newresult = randomProperty(USA_moviedict);
-imageout = giveValue(newresult);
+  result = movie[Math.floor(Math.random()*movie.length)];;
+imageout = result.pic;
 updateImage();
 }; 
 

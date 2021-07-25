@@ -1,4 +1,4 @@
 let score = 0;
 let imageout;
-result = randomProperty(USA_moviedict);
-imageout = giveValue(result);
+result = movie[Math.floor(Math.random()*movie.length)];;
+imageout = result.pic;

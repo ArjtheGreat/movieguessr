@@ -11,19 +11,21 @@ function randomProperty(obj) {
     
 
 
-let USA_moviedict = {};
-let addPair = function (myKey, myValue) {
-    USA_moviedict[myKey] = myValue;
-};
-let giveValue = function (myKey) {
-    return USA_moviedict[myKey];
-};
 
-addPair("AvengersEndgame", "movies/USA_AvengersEndgame.png");
-addPair("PulpFiction", "movies/USA_PulpFiction.png");
-addPair("movie1", "movies/USA_movie1.png");
-addPair("movie2", "movies/USA_movie2.png");
-addPair("movie3", "movies/USA_movie3.png");
-addPair("movie4", "movies/USA_movie4.png");
-addPair("movie5", "movies/USA_movie5.png");
-addPair("movie6", "movies/USA_movie6.png");
+
+var AvengersEndgame = {
+    name: "Avengers Endgame",
+    pic: "movies/USA_AvengersEndgame.png",
+    country: "US"
+}
+
+var PulpFiction = {
+    pic: "movies/USA_PulpFiction.png",
+    country: "US"
+}
+
+
+var movie = []; //this is array literation
+
+movie.push(AvengersEndgame);
+movie.push(PulpFiction);
