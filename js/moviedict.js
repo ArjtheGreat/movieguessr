@@ -7,10 +7,6 @@ function randomProperty(obj) {
     return returnvar;
 }
 
-       
-    
-
-
 
 
 var AvengersEndgame = {
