@@ -20,9 +20,7 @@ var submitAnswer = function() {
   } else {
     alert('Answer is wrong');
   } 
-  result = movie[Math.floor(Math.random()*movie.length)];;
-imageout = result.pic;
-movie.splice(movie.indexOf(result));
-updateImage();
+  createGamevar.function1();
 }; 
+
 
