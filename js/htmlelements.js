@@ -6,7 +6,3 @@ form.addEventListener('submit', handleForm);
 const img = document.querySelector("#moviepic");
 img.src = imageout;
 
-function updateImage() {
-    const img = document.querySelector("#moviepic");
-    img.src = imageout;
-}

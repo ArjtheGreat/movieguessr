@@ -6,13 +6,17 @@ function createGame() {
     // us,UNited States
     // zh,Algeria
 
-    result = movie[Math.floor(Math.random()*movie.length)];;
-    imageout = result.pic;
-    movie.splice(movie.indexOf(result));
+    randomInt = Math.floor(Math.random()*movie.length);
+    console.log(randomInt);
+    chosenmovie = movie[randomInt];
+    
+    console.log(chosenmovie);
+    imageout = chosenmovie.pic;
+    console.log(imageout);
+    
     updateImage();
 
     
-
     
 
     function loadFile(filePath) {
@@ -39,7 +43,7 @@ function createGame() {
     radio2text = dict[randomProperty(dict)];
     
 
-
+    
     const form = document.getElementById("d1");
     const li1 = document.createElement('li');
     const input1 = document.createElement('input');
@@ -66,7 +70,7 @@ function createGame() {
     input3.setAttribute("value", "3");
     input3.setAttribute("name", "choice");
     li3.append(input3);
-    li3.append("United States");
+    li3.append(chosenmovie.country);
 
 
     form.append(li1);  
@@ -76,6 +80,7 @@ function createGame() {
 
   function updateImage() {
     const img = document.querySelector("#moviepic");
+    console.log("this works!!");
     img.src = imageout;
 }
 
@@ -83,8 +88,10 @@ var createGamevar = function() {
 
   var function1 = function() { 
     createGame();
+    console.log("works!!");
   }
 
+  
 
   return {
       function1: function () {
@@ -94,3 +101,36 @@ var createGamevar = function() {
 }();
 
 createGamevar.function1();
+
+
+var submitAnswer = function() {
+  console.log("hi");
+  var radios = document.getElementsByName('choice');
+  var value= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         value = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (value == "" ) {
+    alert('please select answer');
+  } else if ( value == "3" ) {
+    alert('Answer is correct !');
+    score = score + 1000;
+    document.getElementById("score-text").innerHTML = "";
+    document.getElementById("score-text").innerHTML = score; 
+    console.log(score);
+  } else {
+    alert('Answer is wrong');
+  } 
+  clearBox();
+  createGamevar.function1();
+}; 
+
+
+function clearBox()
+{
+    document.getElementById("d1").innerHTML = "";
+}

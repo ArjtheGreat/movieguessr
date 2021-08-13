@@ -1,3 +1,7 @@
+// import * as myModule from '/js/createradios.js';
+// import createGamevar from '/js/createradios';x
+
+
 var submitAnswer = function() {
   console.log("hi");
   var radios = document.getElementsByName('choice');
@@ -20,7 +24,7 @@ var submitAnswer = function() {
   } else {
     alert('Answer is wrong');
   } 
-  createGamevar.function1();
+  // createGamevar.function1();
 }; 
 
 
