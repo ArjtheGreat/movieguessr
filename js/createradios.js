@@ -38,6 +38,23 @@ function createGame() {
       spln = line.split(",");
       dict[spln[0]] = spln[1];
     });
+
+    radiochooser = getRandomInt(0,2);
+    console.log("randomint" + radiochooser);
+    const form = document.getElementById("d1");
+
+    const li1 = document.createElement('li');
+    const input1 = document.createElement('input');
+
+    const li2 = document.createElement('li');
+    const input2 = document.createElement('input');
+
+    const li3 = document.createElement('li');
+    const input3 = document.createElement('input');
+
+  
+if(radiochooser==0) {
+    //radio setup
     radio1var = randomProperty(dict);
     console.log(radio1var);
     radio1text = dict[radio1var];
@@ -50,12 +67,6 @@ function createGame() {
       }
     }
     radio2text = dict[radio2var];
-    
-
-    
-    const form = document.getElementById("d1");
-    const li1 = document.createElement('li');
-    const input1 = document.createElement('input');
 
     input1.setAttribute("type", "radio");
     input1.setAttribute("value", "1");
@@ -63,8 +74,6 @@ function createGame() {
     li1.append(input1);
     li1.append(radio1text);
 
-    const li2 = document.createElement('li');
-    const input2 = document.createElement('input');
 
     input2.setAttribute("type", "radio");
     input2.setAttribute("value", "2");
@@ -72,14 +81,99 @@ function createGame() {
     li2.append(input2);
     li2.append(radio2text);
 
-    const li3 = document.createElement('li');
-    const input3 = document.createElement('input');
+
+
+    input3.setAttribute("type", "radio");
+    input3.setAttribute("value", "correct");
+    input3.setAttribute("name", "choice");
+    li3.append(input3);
+    li3.append(chosenmovie.country);
+}
+
+
+if(radiochooser==1) {
+        //radio setup
+    radio3var = randomProperty(dict);
+    console.log(radio3var);
+    radio3text = dict[radio3var];
+    radio2text = "";
+    radio2var = randomProperty(dict);
+    console.log(radio2var);
+    if(radio2var == radio3var) {
+      while(radio2var == radio3var) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    radio2text = dict[radio2var];
 
     input3.setAttribute("type", "radio");
     input3.setAttribute("value", "3");
     input3.setAttribute("name", "choice");
     li3.append(input3);
-    li3.append(chosenmovie.country);
+    li3.append(radio3text);
+
+
+    input2.setAttribute("type", "radio");
+    input2.setAttribute("value", "2");
+    input2.setAttribute("name", "choice");
+    li2.append(input2);
+    li2.append(radio2text);
+
+
+
+    input1.setAttribute("type", "radio");
+    input1.setAttribute("value", "correct");
+    input1.setAttribute("name", "choice");
+    li1.append(input1);
+    li1.append(chosenmovie.country);
+}
+
+
+
+
+
+if(radiochooser==2) {
+    //radio setup
+radio3var = randomProperty(dict);
+console.log(radio3var);
+radio3text = dict[radio3var];
+radio1text = "";
+radio1var = randomProperty(dict);
+console.log(radio1var);
+if(radio1var == radio3var) {
+  while(radio1var == radio3var) {
+    radio1var = randomProperty(dict);
+  }
+}
+radio1text = dict[radio1var];
+
+
+
+
+
+
+input3.setAttribute("type", "radio");
+input3.setAttribute("value", "3");
+input3.setAttribute("name", "choice");
+li3.append(input3);
+li3.append(radio3text);
+
+
+
+input1.setAttribute("type", "radio");
+input1.setAttribute("value", "1");
+input1.setAttribute("name", "choice");
+li1.append(input1);
+li1.append(radio1text);
+
+
+input2.setAttribute("type", "radio");
+input2.setAttribute("value", "correct");
+input2.setAttribute("name", "choice");
+li2.append(input2);
+li2.append(chosenmovie.country);
+}
+    
 
 
     form.append(li1);  
@@ -125,7 +219,7 @@ var submitAnswer = function() {
   
   if (value == "" ) {
     alert('please select answer');
-  } else if ( value == "3" ) {
+  } else if ( value == "correct" ) {
     alert('Answer is correct !');
     score = score + 1000;
     document.getElementById("score-text").innerHTML = "";
@@ -143,3 +237,7 @@ function clearBox()
 {
     document.getElementById("d1").innerHTML = "";
 }
+
+function getRandomInt(min, max) { 
+  return Math.floor(Math.random() * (parseFloat(max) - parseFloat(min) + 1)) + parseFloat(min);
+};
