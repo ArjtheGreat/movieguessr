@@ -11,9 +11,30 @@
 <head>
     <script src = "js/moviedict.js" defer></script> 
     <script src = "js/htmlelements.js" defer></script> 
+    <link rel="stylesheet" href="css/navbar.css" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
     <title>MovieGuessr</title>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">MovieGuessr</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div> 
+            <ul class="navbar__menu">
+            <li class="navbar__item"><a href="/index.html" class="navbar__links">Home</a></li>
+            <li class="navbar__item"><a href="/account.html" class="navbar__links">My Account</a></li>
+            <li class="navbar__item"><a href="/aboutus.html" class="navbar__links">About Us</a></li>
+            <li class="navbar__btn"><a href="/login.php" class="log_in_button">Log In</a></li>
+            <li class="navbar__btn"><a href="/signup.html" class="sign_up_button">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <a href="index.html">Home</a> 
     <h1>Welcome to the Game</h1>
     <br>
@@ -128,5 +149,6 @@
             }
         }
     </script>
+    <script src="js/navbar.js"></script>
 </body>
 </html>

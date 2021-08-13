@@ -1,0 +1,230 @@
+.null {
+    color: #05386B;
+    color: #379683;
+    color: #5CDB95;
+    color: #8EE4AF;
+    color: #EDF5E1;  
+  }
+   
+   .navbar {
+     background: #05386B;
+     font-family: "Comic Sans MS", "Comic Sans", cursive;
+     height: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 1.2rem;
+     position: sticky;
+     top: 0;
+     z-index: 999;
+   }
+   
+   .navbar__container {
+     display: flex;
+     justify-content: space-between;
+     height: 80px;
+     z-index: 1;
+     width: 100%;
+     max-width: 1300px;
+     margin-right: auto;
+     margin-left: auto;
+     padding-right: 50px;
+     padding-left: 50px;
+   }
+   
+   #navbar__logo {
+     background-color: #5CDB95;
+     background-size: 100%;
+     background-clip: text;
+     -webkit-background-clip: text;
+     -moz-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     -moz-text-fill-color: transparent;
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+     text-decoration: none;
+     font-size: 2rem;
+   }
+   
+   .navbar__menu {
+     display: flex;
+     align-items: center;
+     list-style: none;
+     text-align: center;
+   }
+   
+   .navbar__item {
+     height: 80px;
+  }
+   
+   .navbar__links {
+     color: #5CDB95;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+     padding: 0 1rem;
+     height: 100%;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+   }
+   
+   .navbar__btn {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0 1rem;
+     width: 100%;
+     text-overflow: ellipsis;
+     overflow: hidden;
+     white-space: nowrap;
+   }
+   
+   .sign_up_button {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-decoration: none;
+     padding: 10px 20px;
+     height: 100%;
+     width: 100%;
+     border: none;
+     outline: none;
+     border-radius: 4px;
+     background:  #5CDB95;
+     background-size: 16px;
+     color: #fff;
+   }
+  
+   .log_in_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 100%;
+    width: 100%;
+    border: solid #5CDB95;
+    outline: none;
+    border-radius: 4px;
+    background: transparent;
+    color: #5CDB95;
+  
+   }
+   
+    .sign_up_button:hover {
+     background: #21d4fd;
+     transition: all 0.3s ease;
+   }
+   
+   .log_in_button:hover {
+    border-color: #21d4fd;
+    color: #21d4fd;
+    transition: all 0.3s ease;
+   }
+  
+   .navbar__links:hover {
+     color: #21d4fd;
+     transition: all 0.3s ease;
+   }
+   
+   @media screen and (max-width: 960px) {
+     .navbar__container {
+       display: flex;
+       justify-content: space-between;
+       height: 80px;
+       z-index: 1;
+       width: 100%;
+       max-width: 960px;
+       padding: 0;
+     }
+   
+     .navbar__menu {
+       display: grid;
+       grid-template-columns: auto;
+       margin: 2;
+       width: 100%;
+       position: absolute;
+       top: -1000px;
+       opacity: 1;
+       transition: all 0.5s ease;
+  
+       z-index: -1;
+     }
+   
+     .navbar__menu.active {
+       background: #242582;
+       top: 100%;
+       opacity: 1;
+       transition: all 0.5s ease;
+       z-index: 99;
+       height: 700px;
+       font-size: 1.6rem;
+     }
+   
+     #navbar__logo {
+  
+       padding-left: 50px;
+     }
+   
+     .navbar__toggle .bar {
+       width: 25px;
+       height: 3px;
+       margin: 5px auto;
+       transition: all 0.3s ease-in-out;
+       background: #fff;
+     }
+     
+     .navbar__links {
+       text-align: center;
+       padding: 2rem;
+       width: 100%;
+       display: table;
+     }
+   
+  
+     .sign_up_button {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       width: 80%;
+       height: 80px;
+       margin: 0;
+     }
+  
+     .log_in_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80%;
+      height: 80px;
+      margin: 0;
+    }
+   
+     #mobile-menu {
+       position: absolute;
+       top: 33px;
+       right: 50px;
+  
+     }
+   
+     .navbar__toggle .bar {
+       display: block;
+       cursor: pointer;
+       background-color: #5CDB95;
+     }
+   
+     #mobile-menu.is-active .bar:nth-child(2) {
+       opacity: 0;
+     }
+   
+     #mobile-menu.is-active .bar:nth-child(1) {
+       transform: translateY(8px) rotate(45deg);
+     }
+   
+     #mobile-menu.is-active .bar:nth-child(3) {
+       transform: translateY(-8px) rotate(-45deg);
+     }
+   }
