@@ -38,9 +38,18 @@ function createGame() {
       spln = line.split(",");
       dict[spln[0]] = spln[1];
     });
-
-    radio1text = dict[randomProperty(dict)];
-    radio2text = dict[randomProperty(dict)];
+    radio1var = randomProperty(dict);
+    console.log(radio1var);
+    radio1text = dict[radio1var];
+    radio2text = "";
+    radio2var = randomProperty(dict);
+    console.log(radio2var);
+    if(radio2var == radio1var) {
+      while(radio2var == radio1var) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    radio2text = dict[radio2var];
     
 
     
