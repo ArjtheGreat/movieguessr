@@ -9,6 +9,8 @@ function createGame() {
     randomInt = Math.floor(Math.random()*movie.length);
     console.log(randomInt);
     chosenmovie = movie[randomInt];
+
+    // movie.splice(movie.indexOf(randomInt));
     
     console.log(chosenmovie);
     imageout = chosenmovie.pic;
@@ -67,7 +69,17 @@ if(radiochooser==0) {
       }
     }
     radio2text = dict[radio2var];
-
+    if(radio1text == chosenmovie.country) {
+      while(radio1text == chosenmovie.country) {
+        radio1var = randomProperty(dict);
+      }
+    }
+    if(radio2text == chosenmovie.country) {
+      while(radio2text == chosenmovie.country) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    
     input1.setAttribute("type", "radio");
     input1.setAttribute("value", "1");
     input1.setAttribute("name", "choice");
@@ -106,6 +118,17 @@ if(radiochooser==1) {
     }
     radio2text = dict[radio2var];
 
+    if(radio3text == chosenmovie.country) {
+      while(radio3text == chosenmovie.country) {
+        radio3var = randomProperty(dict);
+      }
+    }
+    if(radio2text == chosenmovie.country) {
+      while(radio2text == chosenmovie.country) {
+        radio2var = randomProperty(dict);
+      }
+    }
+
     input3.setAttribute("type", "radio");
     input3.setAttribute("value", "3");
     input3.setAttribute("name", "choice");
@@ -116,7 +139,7 @@ if(radiochooser==1) {
     input2.setAttribute("type", "radio");
     input2.setAttribute("value", "2");
     input2.setAttribute("name", "choice");
-    li2.append(input2);
+    li2.append(input2); 
     li2.append(radio2text);
 
 
@@ -147,7 +170,16 @@ if(radio1var == radio3var) {
 }
 radio1text = dict[radio1var];
 
-
+if(radio1text == chosenmovie.country) {
+  while(radio1text == chosenmovie.country) {
+    radio1var = randomProperty(dict);
+  }
+}
+if(radio3text == chosenmovie.country) {
+  while(radio3text == chosenmovie.country) {
+    radio3var = randomProperty(dict);
+  }
+}
 
 
 
@@ -229,7 +261,14 @@ var submitAnswer = function() {
     alert('Answer is wrong');
   } 
   clearBox();
-  createGamevar.function1();
+  numofquestions = numofquestions-1;
+  console.log(numofquestions);
+  if(numofquestions>0) {
+    createGamevar.function1();
+  }
+  else {
+    alert("game over! Final Score: " + score);
+  }
 }; 
 
 
