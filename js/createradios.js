@@ -48,10 +48,11 @@ function createGame() {
   const form = document.getElementById("d1");
 
   input1.setAttribute("class", "ui fluid search selection dropdown gds-cr-semantic");
-  input1.setAttribute("country-data-region-id", "gds-cr-four");
+  input1.setAttribute("country-data-region-id", "gds-cr-1");
   input1.setAttribute("name", "choice");
   input1.setAttribute("data-language", "en");
   li1.append(input1);
+  console.log("Mr. Bounds")
 
   form.append(li1);  
 }
@@ -83,15 +84,14 @@ createGamevar.function1();
 
 
 var submitAnswer = function() {
-  console.log("hi");
   var radios = document.getElementsByName('choice');
-  var value= "";
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         value = radios[i].value; 
-         break;
-       }
+  if (radios == chosenmovie.country) {
+    value = "correct"
   }
+  else {
+    value = "wrong"
+  }
+  console.log("country name:" + radios.name)
   
   if (value == "" ) {
     alert('please select answer');
