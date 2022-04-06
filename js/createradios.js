@@ -47,13 +47,13 @@ function createGame() {
 
     const li1 = document.createElement("option");
     li1.setAttribute("type", "option");
-    li1.setAttribute("value", "United States");
-    li1.setAttribute("name", "United States");
+    li1.setAttribute("value", "United States of America");
+    li1.setAttribute("label", "United States of America");
 
     const li2 = document.createElement("option");
     li2.setAttribute("type", "option");
-    li2.setAttribute("value", "Premium"); 
-    li2.setAttribute("name", "Premium");
+    li2.setAttribute("value", "China"); 
+    li2.setAttribute("label", "China");
     console.log("premium")
 
     const li3 = document.createElement("option");
@@ -92,13 +92,15 @@ createGamevar.function1();
 
 var submitAnswer = function() {
   console.log("hi");
-  var radios = document.getElementsByName("choice");
-  var value= "";
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         value = radios[i].value; 
-         break;
-       }
+  selectElement = document.querySelector('#d1');
+  value = selectElement.value;
+  console.log(value)
+
+  if(value == chosenmovie.country) {
+    value = "correct"
+  }
+  else {
+    value = "wrong"
   }
   
   if (value == "" ) {
