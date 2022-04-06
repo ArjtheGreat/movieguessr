@@ -41,21 +41,177 @@ function createGame() {
       dict[spln[0]] = spln[1];
     });
 
+    radiochooser = getRandomInt(0,2);
+    console.log("randomint" + radiochooser);
+    const form = document.getElementById("d1");
 
-  const li1 = document.createElement('li');
-  const input1 = document.createElement('form-group');
-    
-  const form = document.getElementById("d1");
+    const li1 = document.createElement('li');
+    const input1 = document.createElement('input');
 
-  input1.setAttribute("class", "ui fluid search selection dropdown gds-cr-semantic");
-  input1.setAttribute("country-data-region-id", "gds-cr-four");
-  input1.setAttribute("name", "choice");
-  input1.setAttribute("data-language", "en");
-  li1.append(input1);
+    const li2 = document.createElement('li');
+    const input2 = document.createElement('input');
 
-  form.append(li1);  
-}
+    const li3 = document.createElement('li');
+    const input3 = document.createElement('input');
+
   
+if(radiochooser==0) {
+    //radio setup
+    radio1var = randomProperty(dict);
+    console.log(radio1var);
+    radio1text = dict[radio1var];
+    radio2text = "";
+    radio2var = randomProperty(dict);
+    console.log(radio2var);
+    if(radio2var == radio1var) {
+      while(radio2var == radio1var) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    radio2text = dict[radio2var];
+    if(radio1text == chosenmovie.country) {
+      while(radio1text == chosenmovie.country) {
+        radio1var = randomProperty(dict);
+      }
+    }
+    if(radio2text == chosenmovie.country) {
+      while(radio2text == chosenmovie.country) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    
+    input1.setAttribute("type", "radio");
+    input1.setAttribute("value", "1");
+    input1.setAttribute("name", "choice");
+    li1.append(input1);
+    li1.append(radio1text);
+
+
+    input2.setAttribute("type", "radio");
+    input2.setAttribute("value", "2");
+    input2.setAttribute("name", "choice");
+    li2.append(input2);
+    li2.append(radio2text);
+
+
+
+    input3.setAttribute("type", "radio");
+    input3.setAttribute("value", "correct");
+    input3.setAttribute("name", "choice");
+    li3.append(input3);
+    li3.append(chosenmovie.country);
+}
+
+
+if(radiochooser==1) {
+        //radio setup
+    radio3var = randomProperty(dict);
+    console.log(radio3var);
+    radio3text = dict[radio3var];
+    radio2text = "";
+    radio2var = randomProperty(dict);
+    console.log(radio2var);
+    if(radio2var == radio3var) {
+      while(radio2var == radio3var) {
+        radio2var = randomProperty(dict);
+      }
+    }
+    radio2text = dict[radio2var];
+
+    if(radio3text == chosenmovie.country) {
+      while(radio3text == chosenmovie.country) {
+        radio3var = randomProperty(dict);
+      }
+    }
+    if(radio2text == chosenmovie.country) {
+      while(radio2text == chosenmovie.country) {
+        radio2var = randomProperty(dict);
+      }
+    }
+
+    input3.setAttribute("type", "radio");
+    input3.setAttribute("value", "3");
+    input3.setAttribute("name", "choice");
+    li3.append(input3);
+    li3.append(radio3text);
+
+
+    input2.setAttribute("type", "radio");
+    input2.setAttribute("value", "2");
+    input2.setAttribute("name", "choice");
+    li2.append(input2); 
+    li2.append(radio2text);
+
+
+
+    input1.setAttribute("type", "radio");
+    input1.setAttribute("value", "correct");
+    input1.setAttribute("name", "choice");
+    li1.append(input1);
+    li1.append(chosenmovie.country);
+}
+
+
+
+
+
+if(radiochooser==2) {
+    //radio setup
+radio3var = randomProperty(dict);
+console.log(radio3var);
+radio3text = dict[radio3var];
+radio1text = "";
+radio1var = randomProperty(dict);
+console.log(radio1var);
+if(radio1var == radio3var) {
+  while(radio1var == radio3var) {
+    radio1var = randomProperty(dict);
+  }
+}
+radio1text = dict[radio1var];
+
+if(radio1text == chosenmovie.country) {
+  while(radio1text == chosenmovie.country) {
+    radio1var = randomProperty(dict);
+  }
+}
+if(radio3text == chosenmovie.country) {
+  while(radio3text == chosenmovie.country) {
+    radio3var = randomProperty(dict);
+  }
+}
+
+
+
+
+input3.setAttribute("type", "radio");
+input3.setAttribute("value", "3");
+input3.setAttribute("name", "choice");
+li3.append(input3);
+li3.append(radio3text);
+
+
+
+input1.setAttribute("type", "radio");
+input1.setAttribute("value", "1");
+input1.setAttribute("name", "choice");
+li1.append(input1);
+li1.append(radio1text);
+
+
+input2.setAttribute("type", "radio");
+input2.setAttribute("value", "correct");
+input2.setAttribute("name", "choice");
+li2.append(input2);
+li2.append(chosenmovie.country);
+}
+    
+
+
+    form.append(li1);  
+    form.append(li2);  
+    form.append(li3);  
+  }
 
   function updateImage() {
     const img = document.querySelector("#moviepic");
