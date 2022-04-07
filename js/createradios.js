@@ -32,7 +32,7 @@ function createGame() {
       return thing;
     }
 
-    csvfile = loadFile("csv/countrycodes.csv");
+    csvfile = loadFile("csv/newcountryborders.csv");
 
     
     var dict = {}
@@ -49,7 +49,9 @@ function createGame() {
     initial.setAttribute("type", "option");
     initial.setAttribute("value", "Select A Country");
     initial.setAttribute("label", "Select A Country");
-    select.append(initial); 
+    select.append(initial);
+    
+    console.log(dict)
 
 
     for (var key in dict) {
@@ -99,7 +101,7 @@ var submitAnswer = function() {
   value = selectElement.value;
   console.log(value)
 
-  if(value == " " + chosenmovie.country + "\r") {
+  if(value == chosenmovie.country + "\r") {
     value = "correct"
   }
   else if (value == "Select A Country") {
