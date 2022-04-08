@@ -111,31 +111,40 @@ var submitAnswer = function() {
     value = "wrong"
   }
   
+  
   if (value == "no answer" ) {
     alert("please select answer");
   } else if ( value == "correct" ) {
-    alert("Answer is correct !");
-    score = score + 1000;
+    score = score + 1;
     document.getElementById("score-text").innerHTML = "";
-    document.getElementById("score-text").innerHTML = score; 
+    document.getElementById("score-text").innerHTML = score;
     console.log(score);
-  } else {
-    alert("Answer is wrong");
-  } 
-  clearBox();
-  numofquestions = numofquestions-1;
-  console.log(numofquestions);
-  if(numofquestions>0) {
+    alert("Answer is correct! It took you " + score + " guesses");
+    clearBox();
     createGamevar.function1();
-  }
+  } 
   else {
-    alert("game over! Final Score: " + score);
-  }
+    score = score + 1;
+    document.getElementById("score-text").innerHTML = "";
+    document.getElementById("score-text").innerHTML = score;
+    
+    concatmessage = "";
+    if(score == 6) {
+      concatmessage = " Sorry, you failed to guess today's movie. Try again tomorrow!"
+    }
+    
+    alert("Answer is wrong." + concatmessage);
+  } 
+  
+  
 }; 
 
 
 function clearBox()
 {
+    score = 0;
+    document.getElementById("score-text").innerHTML = "";
+    document.getElementById("score-text").innerHTML = score;
     document.getElementById("d1").innerHTML = "";
 }
 
