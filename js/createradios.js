@@ -111,10 +111,18 @@ var submitAnswer = function() {
     value = "wrong"
   }
   
+  logguess = document.querySelector('#log_guess');
   
+
   if (value == "no answer" ) {
     alert("please select answer");
   } else if ( value == "correct" ) {
+    const listcountry = document.createElement("li");
+    listcountry.setAttribute("type", "li");
+    listcountry.setAttribute("value", value);
+    listcountry.setAttribute("label", value);
+    logguess.append(listcountry)
+
     score = score + 1;
     document.getElementById("score-text").innerHTML = "";
     document.getElementById("score-text").innerHTML = score;
@@ -127,6 +135,12 @@ var submitAnswer = function() {
     score = score + 1;
     document.getElementById("score-text").innerHTML = "";
     document.getElementById("score-text").innerHTML = score;
+
+    const listcountry = document.createElement("li");
+    listcountry.setAttribute("type", "li");
+    listcountry.setAttribute("value", value);
+    listcountry.setAttribute("content", value);
+    logguess.append(listcountry)
     
     concatmessage = "";
     if(score == 6) {
